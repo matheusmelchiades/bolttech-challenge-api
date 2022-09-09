@@ -40,9 +40,9 @@ module.exports = [
                     'taskId': joi.string().uuid().required()
                 }),
                 'payload': joi.object().keys({
-                    'content': joi.string().min(3).required(),
-                    'dueAt': joi.string().isoDate().required(),
-                    'isDone': joi.boolean().required()
+                    'content': joi.string().min(3).optional(),
+                    'dueAt': joi.string().isoDate().optional(),
+                    'isDone': joi.boolean().optional()
                 })
             }
         }

@@ -35,11 +35,11 @@ module.exports.create = async (req, h) => {
 
 module.exports.signIn = async (r, h) => {
     try {
-        const { 'data': user } = r.auth.credentials;
+        const user = r.auth.credentials;
 
         const token = await authToken.generate(user);
 
-        return h.response().header('Authorization', token).code(204);
+        return h.response({ token, user }).code(200);
     } catch (err) {
         logger.error(err.message);
 
