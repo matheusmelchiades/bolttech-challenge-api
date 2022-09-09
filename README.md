@@ -1,8 +1,8 @@
-# template-server-hapi
+# bolttech-challenge-api
 
 Hapi.js
 
-## Tecnologias
+## Technologies
 
 * [Hapi](https://hapi.dev/) - Framework server
 * [Node](https://nodejs.org/en/) - Runtime builder
@@ -13,15 +13,15 @@ Hapi.js
 * homolog
 * production
 
-## Configuração
+## Setup
 
-Após copiar e renomear conforme os script abaixo, customize as configurações conforme necessario.
+After copying and renaming as per the script below, customize the configs as you need.
 
 ```
 > cp .envs/<Enviroment>.env .env
 ```
 
-## Instalação
+## Install
 
 ```bash
 > yarn
@@ -29,7 +29,7 @@ ou
 > npm i
 ```
 
-## Desenvolvimento
+## Development
 
 ```bash
 > yarn run dev
@@ -37,7 +37,7 @@ ou
 > npm run dev
 ```
 
-## Iniciar aplicação
+## Launch the Application
 
 ```
 > yarn start
@@ -47,19 +47,19 @@ npm start
 
 ***
 
-## Arquitetura
+## Architecture
 
-* [app](./app) - Tem com objetivo agrupar os serviços que compõe a aplicação.
+* [app](./app) - It aims to group the services that make up the application.
   * [api](./app/api)
-    * [components](#component) - Tem como objetivo organizar de acordo com cada regra de negócio. (ex: users, posts)
-    * [services](./app/api/services) - Tem com objetivo centralizar serviços como socket, email e entre outros.
-* [config](./config.py) - Centralização de constantes, para a aplicação.
-* [engine](./engine/) - Responsável carregar dependencias, plugins, middlewares e funções para a inicialização do servidor
-* [server](./server.js) - Responsável por iniciar a aplicação.
+    * [components](#component) - It aims to organize according to each business rule. (ex: users, posts)
+    * [services](./app/api/services) - It aims to centralize services such as socket, email and others.
+* [config](./config.py) - Centralization of constants, for the application.
+* [engine](./engine/) - Responsible for loading dependencies, plugins, middlewares and functions for server startup
+* [server](./server.js) - Responsible for starting the application.
 
 ### Component
 
-* [routes](./app/main/routes.py) - Tem como objetivo, na determinação de qual ação/método deve ser executado na aplicação, criando um acesso externo.
-* [controller]() Responsavel por tratar e controlar funcionalidades entre o roteamento e modelagem da aplicação.
-* [model](./examples/model.py) - Tem como responsabilidade na manipulação dos dados de entrada externa, aplicando a regra de negócio proposta e enviar ou não para o armazenamento do banco de dados, através da camada DAO.
-* [dao](./examples/dao.py) - Tem como responsabilidade criar uma camada de abstração, para a persistência dos dados, assim, separando a regra de negócio das de acesso ao banco.
+* [routes](./app/main/routes.py) - Its objective, in the determination of which action/method must be executed in the application, creating an external access.
+* [controller]() Responsible for handling and controlling functionality between routing and application modeling.
+* [model](./examples/model.py) - It is responsible for handling external input data, applying the proposed business rule and sending it or not to the database storage, through the DAO layer.
+* [dao](./examples/dao.py) - It is responsible for creating an abstraction layer for data persistence, thus separating the business rule from those for accessing the bank.
