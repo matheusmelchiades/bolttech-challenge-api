@@ -51,7 +51,7 @@ module.exports.delete = id => {
 };
 
 
-module.exports.getProjectsAndTasks = () => {
+module.exports.getProjectsAndTasks = userId => {
 
     return {
         'text': `
@@ -73,9 +73,10 @@ module.exports.getProjectsAndTasks = () => {
                         FROM tasks t
                         WHERE t.project_id = p.id
                     ) as "tasks"
-            FROM projects p;
+            FROM projects p
+            WHERE p.user_id = $1;
         `,
-        'values': []
+        'values': [userId]
     };
 };
 

@@ -67,7 +67,8 @@ module.exports.delete = async (request, h) => {
 
 module.exports.getTasksByProject = async (req, h) => {
     try {
-        const projects = await model.getProjectsAndTasks();
+        const { 'data': user } = req.auth.credentials;
+        const projects = await model.getProjectsAndTasks(user);
 
         return h.response(projects).code(200);
     } catch (err) {

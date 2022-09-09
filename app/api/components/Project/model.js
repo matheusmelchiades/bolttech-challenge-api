@@ -77,8 +77,8 @@ module.exports.delete = async id => {
     }
 };
 
-module.exports.getProjectsAndTasks = async () => {
-    const getProjectWithTasksQuery = query.getProjectsAndTasks();
+module.exports.getProjectsAndTasks = async user => {
+    const getProjectWithTasksQuery = query.getProjectsAndTasks(user.id);
 
     const results = await db.query(getProjectWithTasksQuery.text, getProjectWithTasksQuery.values);
 
